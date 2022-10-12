@@ -1,4 +1,4 @@
-name: Deploy to stg on PR to Staging Branch
+name: Deploy to stg
 
 on:
   push:
