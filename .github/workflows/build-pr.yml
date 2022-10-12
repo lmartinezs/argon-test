@@ -1,9 +1,9 @@
-name: Test
+name: CI
 
 on:
   pull_request:
     branches:
-    - master
+    - develop
     - staging
 
 jobs:
@@ -26,3 +26,4 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
+      
