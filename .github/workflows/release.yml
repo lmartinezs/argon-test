@@ -9,7 +9,7 @@ jobs:
       steps: 
          - uses: actions/checkout@v3 # Checkout our working repository 
          - name: Conventional Changelog Action
-             id: changelog 
+             id: changelog
              uses: TriPSs/conventional-changelog-action@v3 
              with: 
                  github-token: ${{ secrets.GHUB_TOKEN } 
