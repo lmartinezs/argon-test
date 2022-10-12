@@ -49,22 +49,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          
-      - name: deploy to cluster
-        uses: kodermax/kubectl-aws-eks@master
-        env:
-          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}          
-          IMAGE_TAG: ${{ github.sha }}
-          NAMESPACE: default
-          DEPLOYMENT_NAME: arkonprod
-          CONTAINERS_NAME: arkon-prod
-        with:
-          args:  set image deployment/$DEPLOYMENT_NAME $CONTAINERS_NAME=$IMAGE_TAG --record -n $NAMESPACE
-          
-      - name: verify deployment
-        uses: kodermax/kubectl-aws-eks@master
-        env:
-          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-          DEPLOYMENT_NAME: arkonprod
-        with:
-          args: rollout status deployment/$DEPLOYMENT_NAME
