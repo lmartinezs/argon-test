@@ -13,15 +13,15 @@ jobs:
            id: changelog
            uses: TriPSs/conventional-changelog-action@v3 
            with: 
-               github-token: ${{ secrets.GHUB_TOKEN } 
+               github-token: ${{ secrets.GHUB_TOKEN }}
                output-file: "false"
                
          - name: Create Release # This action will create the actual release 
            uses: actions/create-release@v1 
-           if: ${{ steps.changelog.outputs.skipped == 'false' } 
+           if: ${{ steps.changelog.outputs.skipped == 'false' }}
            env: 
-              GITHUB_TOKEN: ${{ secrets.GHUB_TOKEN } 
+              GITHUB_TOKEN: ${{ secrets.GHUB_TOKEN }}
            with: 
-              tag_name: ${{ steps.changelog.outputs.tag } 
-              release_name: ${{ steps.changelog.outputs.tag } 
-              body: ${{ steps.changelog.outputs.clean_changelog }
+              tag_name: ${{ steps.changelog.outputs.tag }}
+              release_name: ${{ steps.changelog.outputs.tag }}
+              body: ${{ steps.changelog.outputs.clean_changelog }}
