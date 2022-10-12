@@ -1,9 +1,9 @@
 name: Deploy to dev on PR to Develop Branch
 
 on:
-  pull_request:
+  push:
     branches:
-    - develop
+      - 'develop'
 jobs:
   build:
     runs-on: ubuntu-latest
