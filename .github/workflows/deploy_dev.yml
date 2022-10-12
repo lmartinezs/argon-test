@@ -1,4 +1,4 @@
-name: Deploy to dev on PR to Develop Branch
+name: Deploy to dev
 
 on:
   push:
