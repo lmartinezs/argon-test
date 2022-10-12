@@ -53,10 +53,8 @@ jobs:
       with:
         context: .
         push: true
-        #tags: ${{ steps.meta.outputs.tags }}
-        #labels: ${{ steps.meta.outputs.labels }}
-        tags: ${{ github.sha }}
-        labels: ${{ github.sha }}
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
         
     #- name: Deploy to EKS
     #  uses: ianbelcher/eks-kubectl-action@master
