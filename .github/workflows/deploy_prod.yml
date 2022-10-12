@@ -50,11 +50,11 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           
-      - name: Update deployment
-        uses: ianbelcher/eks-kubectl-action@master
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: us-east-1
-          cluster_name: arkon-cluster
-          args: set image --namespace default --record deployment/arkonprod arkon-prod=${{ steps.meta.outputs.tags }}
+      #- name: Deploy to EKS
+      #  uses: ianbelcher/eks-kubectl-action@master
+      #  with:
+      #    aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #    aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #    aws_region: us-east-1
+      #    cluster_name: arkon-cluster
+      #    args: set image --namespace default deployment arkonprod arkon-prod=lmartinezs/arkon=${{ github.sha }}
