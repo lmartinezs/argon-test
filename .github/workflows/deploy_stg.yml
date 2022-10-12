@@ -1,9 +1,10 @@
 name: Deploy to stg on PR to Staging Branch
 
 on:
-  pull_request:
+  push:
     branches:
     - staging
+    
 jobs:
   build:
     runs-on: ubuntu-latest
