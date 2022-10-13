@@ -34,7 +34,7 @@ Deployment will create 3 local environments.
 | --- | --- | --- |
 | Develop | develop | dev.arkon.com |
 | Staging | staging | stg.arkon.com |
-| Production | master | prod.arkon.com |
+| Production | last release | prod.arkon.com |
 
 Execute the following command to know address
 
