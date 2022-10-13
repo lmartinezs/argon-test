@@ -1,6 +1,6 @@
 """ARKON APP"""
 import logging
-from flask import Flask
+from flask import Flask, render_template
 
 logging.basicConfig(filename='flask-access.log', level=logging.DEBUG)
 
@@ -14,7 +14,8 @@ def getcount():
     """GET REQUEST"""
     with open(POSTS_REQUESTS_FILE, 'r', encoding="utf-8") as file:
         data = file.read()
-    return "Post requests: " + data
+    #return "Post requests: " + data
+    return render_template('form.html', count=data)
 
 
 @app.route('/count/', methods=['POST'])
@@ -27,13 +28,14 @@ def addcount():
 
     with open(POSTS_REQUESTS_FILE, 'w', encoding="utf-8") as file:
         file.write(count)
-    return "Post requests: " + count
+    #return "Post requests: " + count
+    return render_template('form.html', count=count)
 
 
 @app.route("/")
 def hello():
     """Welcome to home."""
-    return "Hello World!! v4"
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
