@@ -1,7 +1,7 @@
 # argon-test
 Is  a simple app that show you Hello World.
 
-Have an endopoint to send a post request and return a counter of requests post method.
+Have an endpoint to send a post request and return a counter of requests post method.
 
 ## GET: [environment].arkon.com/count/
 
@@ -19,8 +19,8 @@ post request: 1+
 
 # Test application
 
-To test applicación in a kubernetes platform, you need download this repo.
-and execute follow commands:
+To test application in a kubernetes platform, you need download this repo
+and execute the following commands:
 
 `git clone https://github.com/lmartinezs/argon-test.git`
 
@@ -34,7 +34,7 @@ Deployment will create 3 local environments.
 | --- | --- | --- |
 | Develop | develop | dev.arkon.com |
 | Staging | staging | stg.arkon.com |
-| Production | master | prod.arkon.com |
+| Production | latest release | prod.arkon.com |
 
 Execute the following command to know address
 
