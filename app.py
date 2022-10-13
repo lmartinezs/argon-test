@@ -1,6 +1,5 @@
 """ARKON APP"""
 import logging
-import datetime
 from flask import Flask, render_template
 
 logging.basicConfig(filename='flask-access.log', level=logging.DEBUG)
